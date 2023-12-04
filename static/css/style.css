@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* STYLE BASE.HTML */
+
+body{
+    font-family: 'Playfair Display', serif;
+}
+
+/* Apply styles to the header */
+
+header{
+    background-color: #87715C;
+    color: #fff;
+}
+
+header a{
+    color: #fff;
+}
+
+header a:hover {
+    color: #ECE8DF;
+}
+.search-btn {
+    background-color: transparent;
+}
+.search-btn:focus {
+    outline: none;
+}
+
+.icon {
+    display: inline-block;
+    padding: 8px; /* Ajuste o espaçamento da lupa conforme necessário */
+}
+
+/* STYLE INDEX.HTML */
+
 /* Apply styles to the section one */
 
 .section-one {
@@ -6,6 +42,7 @@
     height: 500px;
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 60px;
 }
 
 .image-container {
