@@ -4,6 +4,7 @@
 
 body{
     font-family: 'Playfair Display', serif;
+    color: #000;
 }
 
 /* Apply styles to the header */
@@ -127,4 +128,9 @@ header a:hover {
 }
 
 
+/* STYLE PRODUCTS.HTML */
+
+div.col.text-center h2 {
+    padding-top: 115px;
+}
 
