@@ -30,7 +30,8 @@ header a:hover {
 
 .icon {
     display: inline-block;
-    padding: 8px; /* Ajuste o espaçamento da lupa conforme necessário */
+    padding: 8px; 
+    
 }
 
 /* STYLE INDEX.HTML */
@@ -117,7 +118,7 @@ header a:hover {
 
 .jewelry-images img {
     width: 100%;
-    aspect-ratio: 1/1; /* Aspect ratio to make them square */
+    aspect-ratio: 1/1; 
 }
 
 .jewelry-description {
@@ -134,3 +135,110 @@ div.col.text-center h2 {
     padding-top: 115px;
 }
 
+.product-container img{
+    width: 80%; 
+    height: 400px;
+}
+
+
+
+/* STYLE MEDIA  */
+
+@media screen and (max-width: 980px){
+
+    /* STYLE INDEX.HTML */
+
+    .section-one{
+        padding-top: 150px;
+    }
+
+    .shop-btn{
+        width: 40%;
+    }
+
+    .jewelry-container{
+        height: 65%;
+    }
+
+    /* STYLE PRODUCTS.HTML */
+
+    div.col.text-center h2 {
+        padding-top: 215px;
+    }
+
+    .product-container img{
+        width: 80%; 
+        height: 350px;
+    }
+}
+
+
+@media  (max-width: 768px){
+
+
+    /* STYLE INDEX.HTML */
+
+    .section-one {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 300px; 
+        background-position: top;
+    }
+
+    .text-container {
+        width: 100%;
+        height: auto;
+        padding: 20px; 
+    }
+
+    .shop-btn {
+        width: 20%;
+    }
+
+    .jewelry-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .jewelry-display {
+        width: 100%;
+        height: 450px;
+        background-position: center;
+    }
+
+    .jewelry-details {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .jewelry-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .jewelry-images img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0; 
+    }
+
+    .jewelry-description {
+        width: 100%;
+    }
+
+
+    /* STYLE PRODUCTS.HTML */  
+
+    .product-container img{
+        width: 80%; 
+        height: 450px;
+    }
+}
