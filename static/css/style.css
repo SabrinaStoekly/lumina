@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-/* STYLE BASE.HTML */
+/* ------------ STYLE BASE.HTML ------------ */
 
 body{
     font-family: 'Playfair Display', serif;
@@ -34,7 +34,7 @@ header a:hover {
     
 }
 
-/* STYLE INDEX.HTML */
+/* ------------ STYLE INDEX.HTML ------------ */
 
 /* Apply styles to the section one */
 
@@ -129,7 +129,13 @@ header a:hover {
 }
 
 
-/* STYLE PRODUCTS.HTML */
+.jewelry-description p {
+    font-size: 20px;
+    padding-top: 20%;
+    padding-right: 18px;
+}
+
+/* ------------ STYLE PRODUCTS.HTML ------------ */
 
 div.col.text-center h2 {
     padding-top: 115px;
@@ -140,9 +146,38 @@ div.col.text-center h2 {
     height: 400px;
 }
 
+/* ------------ STYLE PRODUCT_DETAILS.HTML ------------ */
 
+.product-details-container{
+    padding-top: 70px;
+}
 
-/* STYLE MEDIA  */
+.product-details-container img{
+    height: 420px;
+    width: 300px;
+}
+
+.product-descripition-container{
+    padding-top: 30px;
+}
+
+.name{
+    font-size: 30px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+.price{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.rating{    
+    padding-left: 35px;
+    
+}
+
+/* ------------ STYLE MEDIA ------------ */
 
 @media screen and (max-width: 980px){
 
@@ -160,6 +195,10 @@ div.col.text-center h2 {
         height: 65%;
     }
 
+    .jewelry-description p{
+        padding-top: 10%;
+    }
+
     /* STYLE PRODUCTS.HTML */
 
     div.col.text-center h2 {
@@ -168,7 +207,17 @@ div.col.text-center h2 {
 
     .product-container img{
         width: 80%; 
-        height: 350px;
+        height: 350px;        
+    }
+
+    /* STYLE PRODUCT_DETAILS.HTML */
+
+    .product-details-container{
+        padding-top: 200px;
+    }
+    .product-details-container img{        
+        width: 80%;
+        padding-left: 15px;
     }
 }
 
@@ -240,5 +289,13 @@ div.col.text-center h2 {
     .product-container img{
         width: 80%; 
         height: 450px;
+    }
+
+     /* STYLE PRODUCT_DETAILS.HTML */
+
+    .product-details-container img{
+        width: 90%;
+        height: 450px;        
+        padding-left: 10%;
     }
 }

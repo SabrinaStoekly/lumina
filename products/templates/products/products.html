@@ -26,11 +26,11 @@
                     <div class="col-sm-6 col-md-4 col-lg-4 mb-4">
                         <div class="card h-100 border-0">
                             {% if product.image %}
-                            <a href="" class="d-block text-center">
+                            <a href="{% url 'products:product_detail' product.id %}" class="d-block text-center">
                                 <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}" >
                             </a>
                             {% else %}
-                            <a href="" class="d-block text-center">
+                            <a href="{% url 'products:product_detail' product.id %}" class="d-block text-center">
                                 <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                             </a>
                             {% endif %}
@@ -61,7 +61,5 @@
         </div>
     </div>
 </div>
-
-
 
 {% endblock %}
