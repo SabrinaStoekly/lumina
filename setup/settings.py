@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'home',
     'products',
 ]
@@ -85,10 +86,28 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': 'seu-client-id-do-google',
+            'secret': 'seu-client-secret-do-google',
+            'key': ''
+        },
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+    }
+}
+
 SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+SOCIALACCOUNT_QUERY_EMAIL = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
