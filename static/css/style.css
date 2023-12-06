@@ -146,6 +146,10 @@ div.col.text-center h2 {
     height: 400px;
 }
 
+.no-product{
+    padding-top: 150px;
+}
+
 /* ------------ STYLE PRODUCT_DETAILS.HTML ------------ */
 
 .product-details-container{
@@ -208,6 +212,10 @@ div.col.text-center h2 {
     .product-container img{
         width: 80%; 
         height: 350px;        
+    }
+
+    .no-product{
+        padding-top: 250px;
     }
 
     /* STYLE PRODUCT_DETAILS.HTML */

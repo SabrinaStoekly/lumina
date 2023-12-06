@@ -12,6 +12,19 @@
 {% block content %}
 
 <div class="container-fluid">
+    {% if no_categories_found %}
+        <div class="row">
+            <div class="col text-center mt-3">
+                <p>Please double check your search categories!</p>
+            </div>
+        </div>
+    {% elif no_products_found %}
+        <div class="row">
+            <div class="col text-center mt-3">
+                <p  class="no-product">Oops! It seems like this product isn't available right now. Feel free to explore our wide range of other amazing items!</p>
+            </div>
+        </div>
+    {% else %}
     <div class="row">
         <div class="col text-center mt-3">
             <h2>All Products</h2>
@@ -60,6 +73,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
 </div>
 
 {% endblock %}
