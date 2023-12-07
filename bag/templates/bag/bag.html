@@ -1,6 +1,48 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all the buttons to decrease quantity
+    const minusButtons = document.querySelectorAll('.minus-btn');
+    // Select all the buttons to increase quantity
+    const plusButtons = document.querySelectorAll('.plus-btn');
+
+    // Add click event to the decrease buttons
+    minusButtons.forEach(btn => {
+        btn.addEventListener('click', function(event) {
+            event.preventDefault();
+            const form = this.closest('form');
+            const quantityInput = form.querySelector('input[name="quantity"]');
+            let currentQuantity = parseInt(quantityInput.value);
+            // Check if the quantity is greater than 1 before decreasing
+            if (currentQuantity > 1) {
+                currentQuantity -= 1;
+                quantityInput.value = currentQuantity;
+                form.submit();
+            }
+        });
+    });
+
+    // Add click event to the increase buttons
+    plusButtons.forEach(btn => {
+        btn.addEventListener('click', function(event) {
+            event.preventDefault();
+            const form = this.closest('form');
+            const quantityInput = form.querySelector('input[name="quantity"]');
+            let currentQuantity = parseInt(quantityInput.value);
+            currentQuantity += 1;
+            quantityInput.value = currentQuantity;
+            form.submit();
+        });
+    });
+});
+</script>
+{% endblock %}
+
+
+
 {% block content %}
     <div class="overlay"></div>
     <div class="container mb-2">
@@ -15,7 +57,62 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    <div class="table-responsive rounded"></div>
+                    <div class="table-responsive rounded">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th></th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in bag_items %}
+                                    <tr>
+                                        <td><img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="img-thumbnail" style="max-height: 100px;"></td>
+                                        <td>{{ item.product.name }}</td>
+                                        <td>
+                                            <form action="{% url 'bag:adjust_bag' item.product.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <input type="hidden" name="quantity" value="{{ item.quantity }}">                                                
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button type="submit" class="btn btn-outline-secondary btn-sm minus-btn">
+                                                            <i class="fas fa-minus"></i>
+                                                        </button>                                                        
+                                                    </div>
+                                                    <input type="text" class="form-control form-control-sm text-center" value="{{ item.quantity }}" readonly>
+                                                    <div class="input-group-append">
+                                                        <button type="submit" class="btn btn-outline-secondary btn-sm plus-btn">
+                                                            <i class="fas fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </td>
+                                        <td>${{ item.product.price }}</td>
+                                        <td>
+                                            <form action="{% url 'bag:remove_from_bag' item.product.id %}" method="POST">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-outline-danger btn-sm remove-btn">
+                                                    Remove
+                                                </button>
+                                            </form>
+                                        </td>                                 
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-4">
+                        <p><strong>Total Quantity:</strong> {{ product_count }}</p>
+                        <p><strong>Total Value:</strong> ${{ total }}</p>
+                        <p><strong>Delivery:</strong> ${{ delivery|floatformat:"2" }}</p>
+                        <p><strong>Grand Total:</strong> ${{ grand_total|floatformat:"2" }}</p>
+                    </div>
                 {% else %}
                     <p class="lead mb-5">Your bag is empty.</p>
                     <a href="{% url 'products:all_products' %}" class="btn btn-outline-black rounded-0 btn-lg">

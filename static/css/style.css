@@ -123,7 +123,17 @@ header a:hover {
     width: 30%;
     text-align: center;
     margin-left: 40px; 
-    border: 1px solid #000; 
+    border: 1px solid #000;    
+}
+
+.shop-btn:hover{
+    border-color: #87715C; 
+    color: #87715C;
+}
+
+#delivery_message_main_page{
+    font-size: small;
+    margin-top: 5%;    
 }
 
 /* Apply styles to the section two */
@@ -227,6 +237,15 @@ div.col.text-center h2 {
 .rating{    
     padding-left: 35px;
     
+}
+
+.btn:hover{    
+    border-color: #000; 
+    color: #000;
+}
+
+.quantity-btn{
+    width: 30%;
 }
 
 /* ------------ STYLE MEDIA ------------ */
@@ -349,9 +368,9 @@ div.col.text-center h2 {
 
      /* STYLE PRODUCT_DETAILS.HTML */
 
-    .product-details-container img{
-        width: 90%;
-        height: 450px;        
-        padding-left: 10%;
+     .product-details-container img {
+        width: 80%;
+        height: 500px;
+        padding-left: 15%;
     }
 }
