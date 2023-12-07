@@ -2,28 +2,42 @@
 {% load static %}
 
 {% block extra_js %}    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Function to increment quantity when the "+" button is clicked
-            $("#plus-btn").click(function (e) {
-                e.preventDefault();
-                var quantityInput = $("#quantity");
-                var currentValue = parseInt(quantityInput.val());
-                quantityInput.val(currentValue + 1);
-            });
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Function to increment quantity when the "+" button is clicked
+        $("#plus-btn").click(function (e) {
+            e.preventDefault();
+            var quantityInput = $("#quantity");
+            var currentValue = parseInt(quantityInput.val());
 
-            // Function to decrement quantity when the "-" button is clicked
-            $("#minus-btn").click(function (e) {
-                e.preventDefault();
-                var quantityInput = $("#quantity");
-                var currentValue = parseInt(quantityInput.val());
-                if (currentValue > 1) {
-                    quantityInput.val(currentValue - 1);
-                }
-            });
+            // Limita a quantidade máxima para 99
+            if (currentValue < 99) {
+                quantityInput.val(currentValue + 1);
+            }
         });
-    </script>
+
+        // Function to decrement quantity when the "-" button is clicked
+        $("#minus-btn").click(function (e) {
+            e.preventDefault();
+            var quantityInput = $("#quantity");
+            var currentValue = parseInt(quantityInput.val());
+
+            // Verifica se o valor atual é maior que 1 antes de subtrair 1
+            if (currentValue > 1) {
+                quantityInput.val(currentValue - 1);
+            }
+        });
+
+        // Limita a quantidade máxima no campo de entrada para 99 ao pressionar teclas
+        $(".quantity").on('input', function () {
+            var maxValue = parseInt($(this).attr('max'));
+            if ($(this).val() > maxValue) {
+                $(this).val(maxValue);
+            }
+        });
+    });
+</script>
 {% endblock %}
 
 {% block content %}
@@ -67,7 +81,7 @@
                                 <div class="input-group-prepend">
                                     <button class="btn btn-outline-secondary" type="button" id="minus-btn">-</button>
                                 </div>
-                                <input type="number" class="form-control text-center quantity" id="quantity" name="quantity" value="1" min="1">
+                                <input class="form-control text-center quantity" id="quantity" name="quantity" value="1" min="1" max="99">
                                 <div class="input-group-append">
                                     <button class="btn btn-outline-secondary" type="button" id="plus-btn">+</button>
                                 </div>
