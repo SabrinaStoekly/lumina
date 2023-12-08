@@ -95,7 +95,7 @@
                                                 </div>
                                             </form>
                                         </td>
-                                        <td>${{ item.product.price }}</td>
+                                        <td>${{ item.item_total|floatformat:"2" }}</td>
                                         <td>
                                             <form action="{% url 'bag:remove_from_bag' item.product.id %}" method="POST">
                                                 {% csrf_token %}

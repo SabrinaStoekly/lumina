@@ -111,7 +111,7 @@
         <footer class="container-fluid mt-5 my-footer">
             <div class="row">                
                 <div class="col-md-4">
-                    <p>Stay connect with us on social medias</p>
+                    <p class="stay-connect">Stay connect with us on social medias</p>
                     <div class="social-media">
                         <a href=""><i class="fa-brands fa-x-twitter"></i></a>
                         <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -122,31 +122,31 @@
                 
                 <div class="col-md-4">
                     <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font text-black my-0"><strong>LUMINA</strong></h2>
+                        <h2 class="logo-font my-0"><strong>LUMINA</strong></h2>
                     </a>
                 </div>
                 
                 <div class="col-md-4">
                     <ul class="navbar-nav w-auto mx-auto">
                         <li class="nav-item dropdown">
-                            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products:all_products' %}?category=necklaces" id="necklaces-link" aria-haspopup="true" aria-expanded="false">
+                            <a class="logo-font font-weight-bold nav-link" href="{% url 'products:all_products' %}?category=necklaces" id="necklaces-link" aria-haspopup="true" aria-expanded="false">
                                 Necklaces
                             </a>
                         </li>
                 
                         <li class="nav-item dropdown">
-                            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products:all_products' %}?category=earrings" id="earrings-link" aria-haspopup="true" aria-expanded="false">
+                            <a class="logo-font font-weight-bold nav-link" href="{% url 'products:all_products' %}?category=earrings" id="earrings-link" aria-haspopup="true" aria-expanded="false">
                                 Earrings
                             </a>
                         </li>
                 
                         <li class="nav-item dropdown">
-                            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products:all_products' %}?category=rings" id="rings-link" aria-haspopup="true" aria-expanded="false">
+                            <a class="logo-font font-weight-bold nav-link" href="{% url 'products:all_products' %}?category=rings" id="rings-link" aria-haspopup="true" aria-expanded="false">
                                 Rings
                             </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'products:all_products' %}?category=bracelets" id="bracelets-link" aria-haspopup="true" aria-expanded="false">
+                            <a class="logo-font font-weight-bold nav-link" href="{% url 'products:all_products' %}?category=bracelets" id="bracelets-link" aria-haspopup="true" aria-expanded="false">
                                 Bracelets
                             </a>
                         </li>

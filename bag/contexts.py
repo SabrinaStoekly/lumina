@@ -20,14 +20,17 @@ def bag_contents(request):
         # Get product details for the item
         product = get_object_or_404(Product, pk=item_id)
 
-        # Check if item_data is an integer 
+        # Check if item_data is an integer
         if isinstance(item_data, int):
-            total += item_data * product.price
+            # Calculate total for each item considering quantity
+            item_total = item_data * product.price
+            total += item_total
             product_count += item_data
             bag_items.append({
                 'item_id': item_id,
                 'quantity': item_data,
                 'product': product,
+                'item_total': item_total,  # Add the total price for the item
             })
 
     # Calculate delivery cost and grand total
