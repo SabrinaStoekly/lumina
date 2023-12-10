@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
+from django.http import HttpResponse
+from django.views.decorators.http import require_POST
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -8,7 +10,32 @@ from products.models import Product
 from bag.contexts import bag_contents
 
 import stripe
+import json
 
+@require_POST
+def cache_checkout_data(request):
+    try:
+        # Get the PaymentIntent ID from the client_secret in the request
+        client_secret = request.POST.get('client_secret')
+        pid = client_secret.split('_secret')[0]
+        
+        # Set the API key for Stripe
+        stripe.api_key = settings.STRIPE_SECRET_KEY
+        
+        # Modify the PaymentIntent metadata with necessary data
+        stripe.PaymentIntent.modify(pid, metadata={
+            'bag': json.dumps(request.session.get('bag', {})),
+            'save_info': request.POST.get('save_info'),
+            'username': request.user.username if request.user.is_authenticated else None,
+        })
+        
+        # Return success response
+        return HttpResponse(status=200)
+    
+    except Exception as e:
+        # If an error occurs, display a user-friendly message
+        messages.error(request, 'Sorry, your payment cannot be processed right now. Please try again later.')
+        return HttpResponse(content=e, status=400)
 
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
