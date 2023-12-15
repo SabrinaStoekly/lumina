@@ -8,7 +8,7 @@ body{
 }
 
 .space-navbar-maincontent{
-    padding-top: 50px;
+    padding-top: 90px;
 }
 /* Apply styles to the header */
 
@@ -87,124 +87,75 @@ header a:hover {
 
 /* ------------ LOGIN-OUT HMTL ------------ */
 
+.center-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding-top: 20px; 
+}
+
 .container-logs {
-    max-width: 500px;
+    width: 550px;
+    height: 550px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.container-logs h1 {
-    text-align: center;
-    margin-bottom: 10px;
-    font-size: 25px;
+h2.logo-font {
+    font-size: 30px; 
+    text-align: center; 
+    margin-top: 0; 
+    margin-bottom: 20px; 
 }
 
-.container-logs p{
-    font-size: 15px;
+.container-logs p {
+    font-size: 13px; 
+    text-align: left; 
 }
 
-.form-container {
-    display: flex;
-    flex-direction: column;
+.container-logs form.signup,
+.container-logs form.login {
+    height: 100%; 
+    font-size: 10px;     
 }
 
-.container-logs form {
-    display: flex;
-    flex-direction: column;
-    height: 325px;
-    justify-content: space-between;
-    font-size: 15px; 
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="password"] {
+.container-logs form.signup button[type="submit"],
+.container-logs form.login button[type="submit"] {
     width: 100%;
     padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.btn-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.btn-account,
-.btn-google {
-    border: 1.5px solid #000;
-    padding: 5px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-    margin-top: 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    color: #000;
-    width: 100%;
-    border-radius: 1px;
-    background-color: #fff; 
     font-size: 15px;
+    border: 1px solid #000; 
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 1px; 
+    transition: background-color 0.3s, color 0.3s; 
 }
 
-.btn-account:hover,
-.btn-google:hover {    
-    color: #fff;
-    background-color: #000;
-    text-decoration: none;    
+.container-logs form.signup button[type="submit"]:hover,
+.container-logs form.login button[type="submit"]:hover {
+    background-color: #000; 
+    color: #fff; 
 }
-
-.btn-google {
-    margin-top: 10px;
-}
-
-.fa-google {
-    color: #EA4335;
-    margin-right: 5px;
-}
-
 
 /* Apply styles to the log in */
 
-.login {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 15px;
-    margin-top: 20px; /* Adjust margin as needed */
-}
-
-.form-group {
-    margin-bottom: 10px;
-}
-
-.form-group.remember-forgot {
+.form-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 10px; /* Ajuste conforme necessário */
 }
 
-.remember-me {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
+.form-bottom-left {
+    flex: 1; /* Faz com que ocupe o espaço disponível */
 }
 
-.forgot-password {
-    text-decoration: none;
-    color: #000;
+.form-bottom-right {
+    flex: 1; /* Faz com que ocupe o espaço disponível */
+    text-align: right; /* Alinha o link à direita */
 }
 
 /* Apply styles to the log out */
@@ -245,16 +196,16 @@ header a:hover {
     margin-left: auto;     
 }
 
-.text-container h2, p{
+.text-container-margin{
     margin-left: 40px; 
 }
+
 .shop-btn {
     color: #000;
     align-self: flex-start;
     margin-top: 10px;
     width: 30%;
     text-align: center;
-    margin-left: 40px; 
     border: 1px solid #000;    
 }
 

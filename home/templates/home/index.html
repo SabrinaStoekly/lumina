@@ -7,10 +7,12 @@
     <div class="section-one">
         <div class="image-container"></div>
         <div class="text-container">
-            <h2>Welcome to <br> LUMINA</h2>
-            <p>Radiate Your Brilliance.</p>
-            <a href="{% url 'products:all_products' %}" class="shop-btn"> Shop Now</a>
-            <p id="delivery_message_main_page"> Celebrate Every Purchase: <br> Enjoy Complimentary Delivery on <br> Orders Above ${{ free_delivery_threshold }}!</p>            
+            <div class="text-container-margin">
+                <h2>Welcome to <br> LUMINA</h2>
+                <p>Radiate Your Brilliance.</p>
+                <a href="{% url 'products:all_products' %}" class="shop-btn"> Shop Now</a>
+                <p id="delivery_message_main_page"> Celebrate Every Purchase: <br> Enjoy Complimentary Delivery on <br> Orders Above ${{ free_delivery_threshold }}!</p>            
+            </div>
         </div>
     </div>
 
