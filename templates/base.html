@@ -62,9 +62,9 @@
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
             <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                 <li class="list-inline-item dropdown">
-                    <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
-                            <div><i class="fas fa-user fa-lg"></i></div>
+                            <div><i class="fa-regular fa-user"></i></div>
                             
                         </div>
                     </a>
@@ -84,7 +84,7 @@
                 <li class="list-inline-item">
                     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'bag:bag' %}">
                         <div class="text-center">
-                            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                            <div><i class="fa-solid fa-bag-shopping"></i></div>
                             
                         </div>
                     </a>
@@ -110,24 +110,25 @@
     {% endblock %}
 
      <!-- Footer -->
-    <main class="footer-wrap"> 
-        <footer class="container-fluid mt-5 my-footer">
-            <div class="row">   
-                <div class="col-md-4">
-                    <p>© Lumina Jewelry</p>
-                </div>                 
-
-                <div class="col-md-4 social-media"> 
-                    
-                        <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href=""><i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href=""><i class="fa-brands fa-tiktok"></i></a>
-                    
-                </div>
-            </div>            
-        </footer>
-    </main>
+     <div class="foorte">
+     <footer class="my-footer">
+        <div class="container-fluid">
+          <div class="row align-items-center">
+            <div class="col-md-6 text-left">
+              <p>© Lumina Jewelry</p>
+            </div>
+            <div class="col-md-6 text-right">
+              <div class="social-media">
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
 
     {% block postloadjs %}
       <script src="https://kit.fontawesome.com/81e5b05463.js" crossorigin="anonymous"></script>
