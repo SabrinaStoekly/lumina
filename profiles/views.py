@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import AnonymousUser
+
 from .models import UserProfile
 from .forms import UserProfileForm
 from checkout.models import Order
+
 from django.contrib import messages
 
 def profile(request):
@@ -42,3 +44,24 @@ def profile(request):
         }
 
         return render(request, template, context)
+
+def order_history(request, order_number):
+    # Retrieve the order with the given order number or return a 404 error
+    order = get_object_or_404(Order, order_number=order_number)
+
+    # Display an informational message to the user
+    messages.info(
+        request,
+        f'This is a past confirmation for order number {order_number}. '
+        'A confirmation email was sent on the order date.'
+    )
+
+    # Set the template and context for rendering
+    template_name = 'checkout/checkout_success.html'
+    context_data = {
+        'order': order,
+        'from_profile': True,
+    }
+
+    # Render the checkout success template with the order details
+    return render(request, template_name, context_data)

@@ -8,7 +8,7 @@ body{
 }
 
 .space-navbar-maincontent{
-    padding-top: 90px;
+    padding-top: 85px;
 }
 /* Apply styles to the header */
 
@@ -39,8 +39,8 @@ header a:hover {
 
 /* Appling style to the footer */
 
-.foorte{
-    padding-top: 10px;
+.footer{
+    padding-top: 100px;
 }
 
 .my-footer {
@@ -55,12 +55,7 @@ header a:hover {
     left: 0;
     border-top: 1px solid #fff;
   }
-  
-  .my-footer p {
-    margin-left: 25px;
-    margin-top: 10px;
-  }
-  
+
   .social-media a {
     display: inline-block;
     width: 25px;
@@ -77,13 +72,17 @@ header a:hover {
   
   .social-media {
     margin-right: 25px;
-    text-align: right;
+    text-align: left;
   }
   
   .social-media a:hover {
     background-color: #D9D9D9;
   }
-  
+
+  .my-footer p {
+    margin-left: 25px;
+    margin-top: 10px;
+  }
 
 /* ------------ LOGIN-OUT HMTL ------------ */
 
@@ -303,14 +302,16 @@ h2.logo-font {
     color: #000;
     align-self: flex-start;
     margin-top: 10px;
+    padding: 5px  5px;
     width: 30%;
     text-align: center;
     border: 1px solid #000;    
 }
 
 .shop-btn:hover{
-    border-color: #87715C; 
-    color: #87715C;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
 }
 
 #delivery_message_main_page{
@@ -436,14 +437,7 @@ div.col.text-center h2 {
 
 
 @media screen and (max-width: 1150px) {
-    
-    .section-two{
-        height: 450px;
-    }
-
-    .jewelry-container {
-        height: 400px;     
-    } 
+ 
     
     .jewelry-description p {        
         padding-top: 15%;
@@ -453,11 +447,15 @@ div.col.text-center h2 {
 
 @media screen and (max-width: 980px){
 
-    /* STYLE INDEX.HTML */
-
-    .section-one{
+    .space-navbar-maincontent {
         padding-top: 200px;
     }
+
+    .footer {
+        padding-top: 0px;
+    }
+
+    /* STYLE INDEX.HTML */
 
     .shop-btn{
         width: 40%;
@@ -501,6 +499,34 @@ div.col.text-center h2 {
 
 @media  (max-width: 768px){
 
+        /* STYLE BASE.HTML */
+
+
+        .footer{
+            padding-top: 20px;
+        }
+
+        .my-footer {
+            height: 60px; 
+          }
+
+          .social-media {
+            margin: 0 auto; 
+            text-align: center;
+          }
+        
+          .social-media a {
+            margin-top: 10px; 
+          }
+
+          .text-right{
+            text-align: center !important; 
+          }
+        
+          .my-footer p {
+            margin: 0; 
+            margin-top: 5px; 
+          }
 
     /* STYLE INDEX.HTML */
 
@@ -528,6 +554,7 @@ div.col.text-center h2 {
     .jewelry-container {
         flex-direction: column;
         height: auto;
+        padding-bottom: 45px;
     }
 
     .jewelry-display {
@@ -559,7 +586,6 @@ div.col.text-center h2 {
     .jewelry-description {
         width: 100%;
     }
-
 
     /* STYLE PRODUCTS.HTML */  
 

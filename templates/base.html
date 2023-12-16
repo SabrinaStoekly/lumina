@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  {% load static %}
+  {% load static %}  
   <head>
 
     {% block meta %}
@@ -110,25 +110,26 @@
     {% endblock %}
 
      <!-- Footer -->
-     <div class="foorte">
-     <footer class="my-footer">
-        <div class="container-fluid">
-          <div class="row align-items-center">
-            <div class="col-md-6 text-left">
-              <p>© Lumina Jewelry</p>
-            </div>
-            <div class="col-md-6 text-right">
-              <div class="social-media">
-                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+     <div class="footer">
+        <footer class="my-footer">
+          <div class="container-fluid">
+            <div class="row align-items-center">
+              <div class="col-md-6 text-left">
+                <div class="social-media">
+                  <!-- Place social media icons here -->
+                  <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href=""><i class="fa-brands fa-instagram"></i></a>
+                  <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                  <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+              </div>
+              <div class="col-md-6 text-right">
+                <p>© Lumina Jewelry</p>
               </div>
             </div>
           </div>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
 
     {% block postloadjs %}
       <script src="https://kit.fontawesome.com/81e5b05463.js" crossorigin="anonymous"></script>
