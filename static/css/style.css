@@ -116,14 +116,13 @@ h2.logo-font {
     text-align: left; 
 }
 
-.container-logs form.signup,
-.container-logs form.login {
+.container-logs form.signup{
     height: 100%; 
     font-size: 10px;     
 }
 
 .container-logs form.signup button[type="submit"],
-.container-logs form.login button[type="submit"] {
+.container-log-in form.login button[type="submit"] {
     width: 100%;
     padding: 5px;
     font-size: 15px;
@@ -135,34 +134,134 @@ h2.logo-font {
 }
 
 .container-logs form.signup button[type="submit"]:hover,
-.container-logs form.login button[type="submit"]:hover {
+.container-log-in form.login button[type="submit"]:hover {
     background-color: #000; 
     color: #fff; 
 }
 
 /* Apply styles to the log in */
 
-.form-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px; /* Ajuste conforme necessário */
+.container-log-in{
+    width: 550px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.form-bottom-left {
-    flex: 1; /* Faz com que ocupe o espaço disponível */
+.container-log-in form.login {
+    height: 100%; 
+    font-size: 13px;     
 }
 
 .form-bottom-right {
-    flex: 1; /* Faz com que ocupe o espaço disponível */
-    text-align: right; /* Alinha o link à direita */
+    text-align: left;
+    padding-bottom: 10px;
 }
 
 /* Apply styles to the log out */
 
+.center-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.container-log-out {
+    width: 550px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container-log-out form {
+    height: 100%;
+    font-size: 13px;
+}
+
+.form-bottom-right {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.container-log-out button.account-button {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #000;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container-log-out button.account-button:hover {
+    background-color: #000;
+    color: #fff;
+}
 
 
 /* Apply styles to the password_reset */
+
+.container-password-reset h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.container-password-reset p {
+    font-size: 13px;
+    text-align: left;
+}
+
+.container-password-reset form.password_reset {
+    font-size: 13px;
+    text-align: left;    
+}
+
+.container-password-reset form.password_reset input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #000; 
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 1px; 
+    transition: background-color 0.3s, color 0.3s;     
+}
+
+.container-password-reset form.password_reset input[type="submit"]:hover {
+    background-color: #000; 
+    color: #fff; 
+}
+
+/* Apply styles to the password_reset_done */
+
+.container-password-reset {
+    width: 550px;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container-password-reset h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.container-password-reset p {
+    font-size: 13px;
+    text-align: left;
+}
 
 
 /* ------------ STYLE INDEX.HTML ------------ */

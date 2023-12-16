@@ -1,20 +1,58 @@
 {% load socialaccount %}
+{% load static %}
 
-{% get_providers as socialaccount_providers %}
+<style>
+    /* Remove bullet points from the UL */
+    .socialaccount_providers {
+        list-style-type: none;
+        padding: 0;
+    }
 
-{% for provider in socialaccount_providers %}
-{% if provider.id == "openid" %}
-{% for brand in provider.get_brands %}
-<li>
-  <a title="{{brand.name}}" 
-     class="socialaccount_provider {{provider.id}} {{brand.id}}" 
-     href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
-     >{{brand.name}}</a>
-</li>
-{% endfor %}
-{% endif %}
-<li>
-  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" 
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
-</li>
-{% endfor %}
+    /* Style for each social login provider */
+    .socialaccount_providers li {
+        margin-bottom: 10px;
+    }
+
+    /* Style for the social login provider buttons */
+    .socialaccount_providers li a {
+        display: block;
+        width: 100%;
+        padding: 5px;
+        font-size: 15px;
+        border: 1px solid #000; 
+        cursor: pointer;
+        background-color: #fff;
+        border-radius: 1px; 
+        transition: background-color 0.3s, color 0.3s;
+        text-align: center;
+        text-decoration: none; /* Remove underline from links */
+        color: #000; /* Change text color */
+    }
+
+    /* Hover effect for the social login provider buttons */
+    .socialaccount_providers li a:hover {
+        background-color: #000; 
+        color: #fff; 
+    }
+</style>
+
+<ul class="socialaccount_providers">
+    {% get_providers as socialaccount_providers %}
+    {% for provider in socialaccount_providers %}
+        {% if provider.id == "google" %}
+            <li>
+                <a title="Sign In with Google" class="socialaccount_provider {{ provider.id }}" 
+                    href="{% provider_login_url provider.id process='login' %}">
+                    <i class="fab fa-google"></i> Sign In with Google
+                </a>
+            </li>
+        {% else %}
+            <li>
+                <a title="{{ provider.name }}" class="socialaccount_provider {{ provider.id }}" 
+                    href="{% provider_login_url provider.id process='login' %}">
+                    {{ provider.name }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
