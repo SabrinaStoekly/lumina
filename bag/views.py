@@ -7,7 +7,7 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 def add_to_bag(request, item_id):
-    """ Add a quantity of the specified product to the shopping bag """
+    """Add a quantity of the specified product to the shopping bag."""
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
@@ -22,10 +22,11 @@ def add_to_bag(request, item_id):
             bag[item_id] = quantity
     else:
         bag[item_id] = quantity
+        messages.success(request, f'Added {product.name} to your bag')
 
-    messages.success(request, f'Added {product.name} to your bag')
     request.session['bag'] = bag
 
+    # Redirect to the specified URL after adding to bag
     return redirect(redirect_url)
 
 def adjust_bag(request, item_id):
@@ -45,10 +46,10 @@ def adjust_bag(request, item_id):
     return redirect(reverse('bag:bag'))
 
 def remove_from_bag(request, item_id):
-    # Obtenha o produto da sacola pelo ID
+    # Obtain the product from the bag by ID
     product = get_object_or_404(Product, pk=item_id)
 
-    # Faça a lógica para remover o item da sacola
+    # Logic to remove the item from the bag
     if 'bag' in request.session:
         bag = request.session['bag']
         if item_id in bag:
@@ -56,5 +57,5 @@ def remove_from_bag(request, item_id):
             request.session['bag'] = bag
             return redirect('bag:bag')
 
-    # Redirecione de volta para a sacola
+    # Redirect back to the bag if not removed
     return redirect('bag:bag')
