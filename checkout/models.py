@@ -29,10 +29,7 @@ class Order(models.Model):
                                       null=False, default=0)
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False,
-                                  default='')
-
-    def _generate_order_number(self):
-        return uuid.uuid4().hex.upper()
+                                  default='', editable=False)
 
     def update_total(self):
         self.order_total = self.lineitems.aggregate(
@@ -48,7 +45,15 @@ class Order(models.Model):
     def save(self, *args, **kwargs):
         if not self.order_number:
             self.order_number = self._generate_order_number()
+        if not self.stripe_pid:  
+            self.stripe_pid = self._generate_stripe_pid()  
         super().save(*args, **kwargs)
+
+    def _generate_order_number(self):
+        return uuid.uuid4().hex.upper()
+
+    def _generate_stripe_pid(self):       
+        return uuid.uuid4().hex.upper()
 
     def __str__(self):
         return self.order_number
