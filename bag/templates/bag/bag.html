@@ -4,19 +4,15 @@
 {% block extra_js %}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Select all the buttons to decrease quantity
         const minusButtons = document.querySelectorAll('.minus-btn');
-        // Select all the buttons to increase quantity
         const plusButtons = document.querySelectorAll('.plus-btn');
 
-        // Add click event to the decrease buttons
         minusButtons.forEach(btn => {
             btn.addEventListener('click', function(event) {
                 event.preventDefault();
                 const form = this.closest('form');
                 const quantityInput = form.querySelector('input[name="quantity"]');
                 let currentQuantity = parseInt(quantityInput.value);
-                // Check if the quantity is greater than 1 before decreasing
                 if (currentQuantity > 1) {
                     currentQuantity -= 1;
                     quantityInput.value = currentQuantity;
@@ -25,14 +21,12 @@
             });
         });
 
-        // Add click event to the increase buttons
         plusButtons.forEach(btn => {
             btn.addEventListener('click', function(event) {
                 event.preventDefault();
                 const form = this.closest('form');
                 const quantityInput = form.querySelector('input[name="quantity"]');
                 let currentQuantity = parseInt(quantityInput.value);
-                // Limita a quantidade máxima para 99
                 if (currentQuantity < 99) {
                     currentQuantity += 1;
                     quantityInput.value = currentQuantity;
@@ -43,6 +37,7 @@
     });
 </script>
 {% endblock %}
+
 
 
 

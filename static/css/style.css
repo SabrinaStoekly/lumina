@@ -76,7 +76,8 @@ header a:hover {
   }
   
   .social-media a:hover {
-    background-color: #D9D9D9;
+    background-color: #000;
+    color: #fff;
   }
 
   .my-footer p {
@@ -622,3 +623,52 @@ div.col.text-center h2 {
     height: 2px;
 }
 
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid #87715C;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+.arrow-primary {
+    border-bottom-color: #ECE8DF !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #000 !important;
+}
+
+.arrow-success {
+    border-bottom-color: #ECE8DF !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #000 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #87715C !important;
+}
+
+.arrow-info {
+    border-bottom-color: #ECE8DF !important;
+}
+
+.arrow-light {
+    border-bottom-color: #ECE8DF !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #000 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
