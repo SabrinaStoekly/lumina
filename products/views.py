@@ -4,37 +4,56 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
+
 import inflect
+import re
 
 def all_products(request):
     products = Product.objects.all()
-    query = None
-    categories = None
+    query = request.GET.get('q')
+    categories = request.GET.getlist('category')
     no_products_found = False
     no_categories_found = False
 
-    if request.GET:
-        if 'category' in request.GET:
-            categories = request.GET.getlist('category')            
-            existing_categories = Category.objects.filter(name__in=categories)
-            if len(existing_categories) != len(categories):
-                no_categories_found = True
-            else:
-                products = products.filter(category__name__in=categories)
+    if categories:
+        existing_categories = Category.objects.filter(name__in=categories)
+        if len(existing_categories) != len(categories):
+            no_categories_found = True
+        else:
+            category_queries = Q()
+            for category in existing_categories:
+                category_queries |= Q(category=category)
+            
+            products = products.filter(category_queries)
 
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if query:
-                p = inflect.engine()
-                singular_query = p.singular_noun(query)
-                plural_query = p.plural_noun(query)
+    if query:
+        p = inflect.engine()
+        plural_query = p.plural(query)
+        singular_query = p.singular_noun(query) or query
 
-                queries = Q(name__icontains=query) | Q(description__icontains=query) | \
-                          Q(name__icontains=singular_query) | Q(name__icontains=plural_query)
-                products = products.filter(queries)
+        # Create a regex pattern for whole word matching
+        pattern = r'\b(?:{}|{})\b'.format(re.escape(query), re.escape(plural_query))
+        pattern_singular = r'\b{}\b'.format(re.escape(singular_query))
 
-    if not products.exists() and not no_categories_found:
-        no_products_found = True
+        search_queries = (
+            Q(name__iregex=pattern) |
+            Q(description__iregex=pattern) |
+            Q(name__iregex=pattern_singular)
+        )
+        
+        products = products.filter(search_queries)
+
+        if categories:
+            # Apply category filter to the search results
+            category_queries = Q()
+            for category_name in categories:
+                category_queries |= Q(category__name=category_name)
+            
+            products = products.filter(category_queries)
+
+        # Check if no products are found
+        if not products.exists():
+            no_products_found = True
 
     context = {
         'products': products,
@@ -51,6 +70,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     context = {'product': product}
     return render(request, 'products/product_detail.html', context)
+
 @login_required
 def add_product(request):
     if not request.user.is_superuser:

@@ -358,12 +358,12 @@ These technologies and tools collectively facilitated the development, testing, 
 
 ## Troubleshooting Guide
 
-## JavaScript Error Encountered with Bootstrap Toasts
+### JavaScript Error Encountered with Bootstrap Toasts
 
-### Error Description:
+#### Error Description:
 When attempting to implement toasts in the web application using Bootstrap, a JavaScript error occurred due to incorrect or missing integrity hashes in the script tags. The error message displayed in the console indicated: "Error parsing 'integrity' attribute ('YOUR_INTEGRITY_HASH'). The hash algorithm must be one of 'sha256', 'sha384', or 'sha512', followed by a '-' character."
 
-### Solution to Resolve the Error:
+#### Solution to Resolve the Error:
 1. **Access the SRI Hash Generator:**
    - Visit [SRI Hash Generator](https://www.srihash.org/) in your browser.
 
@@ -386,6 +386,25 @@ When attempting to implement toasts in the web application using Bootstrap, a Ja
    - Verify the changes by reloading the web application to ensure that the JavaScript files are loaded without any integrity hash errors.
 
 By following these steps and updating the integrity hashes in the HTML file with the hashes generated from the SRI hash generator, you can rectify the integrity attribute issue and ensure proper loading of external JavaScript files in your web application.
+
+### Bug Fix Details:
+
+#### Issue:
+When users searched for products using singular terms (e.g., "ring"), unrelated items were also displayed (e.g., "earrings"). Additionally, the "products not found" message failed to appear when no relevant items were found.
+
+#### Bug Details:
+The search functionality did not distinguish between plural and singular forms of search terms, resulting in broader matches than intended. This caused incorrect filtering, leading to unrelated products being displayed for singular search queries. Furthermore, the "products not found" message failed to trigger when there were no matching products.
+
+#### Resolution Steps:
+1. Utilized the Python `inflect` library to handle both plural and singular forms of search terms.
+2. Incorporated regular expressions to match whole words, preventing partial word matches and enhancing search accuracy.
+3. Modified the code logic to correctly trigger the "products not found" message when no relevant search results were found.
+
+#### Code Changes:
+
+- Revised the search query to consider both plural and singular forms of search terms.
+- Implemented regular expressions to match whole words and filter search results more accurately.
+- Corrected the logic to trigger the "products not found" message appropriately.
 
 ## Project Validation
 
