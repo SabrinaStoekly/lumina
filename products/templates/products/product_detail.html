@@ -1,35 +1,28 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_js %}    
+{% block extra_js %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-        // Function to increment quantity when the "+" button is clicked
         $("#plus-btn").click(function (e) {
             e.preventDefault();
             var quantityInput = $("#quantity");
             var currentValue = parseInt(quantityInput.val());
-
-            // Limita a quantidade máxima para 99
             if (currentValue < 99) {
                 quantityInput.val(currentValue + 1);
             }
         });
 
-        // Function to decrement quantity when the "-" button is clicked
         $("#minus-btn").click(function (e) {
             e.preventDefault();
             var quantityInput = $("#quantity");
             var currentValue = parseInt(quantityInput.val());
-
-            // Verifica se o valor atual é maior que 1 antes de subtrair 1
             if (currentValue > 1) {
                 quantityInput.val(currentValue - 1);
             }
         });
 
-        // Limita a quantidade máxima no campo de entrada para 99 ao pressionar teclas
         $(".quantity").on('input', function () {
             var maxValue = parseInt($(this).attr('max'));
             if ($(this).val() > maxValue) {
@@ -88,16 +81,16 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <a href="{{ request.META.HTTP_REFERER }}" class="btn rounded-0 mt-3">
+                            <a href="{% url 'products:all_products' %}" class="btn rounded-0 mt-3">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
                             <input type="submit" class="btn rounded-0 text-uppercase mt-3" value="Add to Bag">
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
-                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                    </form>                    
+                    </form>
                 </div>
             </div>
         </div>

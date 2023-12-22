@@ -80,11 +80,11 @@ def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
-            if 'image' not in request.FILES:  # Check if 'image' is in the uploaded files
+            if 'image' not in request.FILES:  
                 messages.error(request, 'Please upload an image for the product.')
             else:
-                save_product(request, form)  # Call the save_product function passing the form
-                return redirect('all_products')  # Redirect to all_products or any other appropriate URL
+                save_product(request, form)  
+                return redirect('all_products')  
     else:
         form = ProductForm()  # Create a new form instance
 
