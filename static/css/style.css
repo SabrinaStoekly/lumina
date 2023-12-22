@@ -263,6 +263,16 @@ h2.logo-font {
     text-align: left;
 }
 
+/* Apply styles emails*/
+
+.box-content {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+  }
+
 
 /* ------------ STYLE INDEX.HTML ------------ */
 
@@ -379,6 +389,13 @@ h2.logo-font {
     padding-right: 18px;
 }
 
+/* ------------ STYLE 404.HTML ------------ */
+
+.error-content {
+    text-align: center;
+    margin-top: 20vh; 
+}
+
 /* ------------ STYLE PRODUCTS.HTML ------------ */
 
 div.col.text-center h2 {
@@ -432,6 +449,12 @@ div.col.text-center h2 {
 
 .quantity-btn{
     width: 30%;
+}
+
+/* -------- STYLE BAG.HTML ---------- */
+
+ .extra-height{
+    height: 100px;
 }
 
 /* ------------ STYLE MEDIA ------------ */
@@ -494,6 +517,12 @@ div.col.text-center h2 {
     .product-details-container img{        
         width: 80%;
         padding-left: 15px;
+    }
+
+     /* STYLE BAG.HTML */
+
+    .extra-height{
+        height: 200px;
     }
 }
 

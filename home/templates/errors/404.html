@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="error-content">
+        <h1>404 - Page Not Found</h1>
+        <p>We're sorry, but the page you're looking for does not exist.</p>
+        <p>Please go back to <a href="{% url 'home' %}">the homepage</a> or contact support.</p>
+    </div>
+{% endblock %}
