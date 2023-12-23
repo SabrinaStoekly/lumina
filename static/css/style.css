@@ -479,6 +479,10 @@ div.col.text-center h2 {
         padding-top: 0px;
     }
 
+    .extra-bottom{
+        margin-bottom: 50px;
+    }
+    
     /* STYLE INDEX.HTML */
 
     .shop-btn{

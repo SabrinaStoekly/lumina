@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row extra-bottom">
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'products:add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -22,9 +22,6 @@
                             {{ field | as_crispy_field }}
                         {% else %}
                             {{ field }}
-                            {% if field.errors %}
-                                <div class="text-danger">{{ field.errors }}</div>
-                            {% endif %}
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
@@ -40,9 +37,23 @@
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-        $('#new-image').change(function() {
-            var file = $('#new-image')[0].files[0];
-            $('#filename').text(`Image will be set to: ${file.name}`);
+        $(document).ready(function() {
+            $('#id_price').on('change', function() {
+                var price = $(this).val();
+                // Convert the price format (e.g., 1550 to 15.50)
+                var formattedPrice = (price / 100).toFixed(2);
+                $(this).val(formattedPrice);
+            });
+            // Handle form submission
+            $('#productForm').on('submit', function(e) {
+                var price = $('#id_price').val();
+                // Convert the price back to the original format (e.g., 15.50 to 1550)
+                var rawPrice = Math.floor(price * 100);
+                $('#id_price').val(rawPrice);
+            });
+
+            // Show toast on document load
+            $('.toast').toast('show');
         });
     </script>
 {% endblock %}

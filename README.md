@@ -279,11 +279,6 @@ LUMINA Jewelry Shop places significant emphasis on user experience, including th
 - **CSS Usage**: `font-family: 'Playfair Display', serif;`
 - **Color**: `color: #000;`
 
-#### Oxygen Mono
-- **Usage**: Oxygen Mono leads regular body text, paragraphs, and buttons, consistently presented in lowercase format.
-- **CSS Usage**: `font-family: 'Oxygen Mono', monospace;`
-- **Color**: `color: #000;`
-
 ### Color
 LUMINA Jewelry Shop embraces a minimalist and elegant design, primarily utilizing black-and-white elements, accentuated with strategic colors to highlight essential components.
 
@@ -387,7 +382,9 @@ When attempting to implement toasts in the web application using Bootstrap, a Ja
 
 By following these steps and updating the integrity hashes in the HTML file with the hashes generated from the SRI hash generator, you can rectify the integrity attribute issue and ensure proper loading of external JavaScript files in your web application.
 
-### Bug Fix Details:
+## Bugs
+
+### Bug 1: Issues with Search Results and Message Display
 
 #### Issue:
 When users searched for products using singular terms (e.g., "ring"), unrelated items were also displayed (e.g., "earrings"). Additionally, the "products not found" message failed to appear when no relevant items were found.
@@ -405,6 +402,23 @@ The search functionality did not distinguish between plural and singular forms o
 - Revised the search query to consider both plural and singular forms of search terms.
 - Implemented regular expressions to match whole words and filter search results more accurately.
 - Corrected the logic to trigger the "products not found" message appropriately.
+
+### Bug 2: Quantity Input in Product Details Page + Keep Shopping button
+
+#### Issue:
+The Keep Shopping button stopped functioning after adding items to the bag. Clicking the button did not redirect users as expected.
+
+#### Bug Details:
+Upon adding items to the bag, the functionality of the Keep Shopping button was affected. It failed to redirect users to the all products page after an item was added.
+
+#### Resolution Steps:
+1. Identified the conflict between the form action and the Keep Shopping button within the product_details.html file.
+2. Separated the form action for adding items to the bag from the Keep Shopping button to resolve the conflicting behavior.
+3. Modified the code to include a separate href link for the Keep Shopping button, redirecting users to the desired all products page while maintaining the functionality of the Add to Bag button.
+
+#### Code Changes:
+
+- Adjusted the structure within product_details.html by creating a separate href link for the Keep Shopping button to ensure independent functionality from the Add to Bag button. This change resolved the conflict and allowed the Keep Shopping button to redirect users correctly.
 
 ## Project Validation
 
@@ -443,4 +457,3 @@ To fork this repository on GitHub, follow these steps:
 - [HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML)
 - [CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
