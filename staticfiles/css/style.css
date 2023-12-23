@@ -1,0 +1,707 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* ------------ STYLE BASE.HTML ------------ */
+
+body{
+    font-family: 'Playfair Display', serif;
+    color: #000; 
+}
+
+.space-navbar-maincontent{
+    padding-top: 85px;
+}
+/* Apply styles to the header */
+
+header{
+    background-color: #87715C;
+    color: #fff;
+}
+
+header a{
+    color: #fff;
+}
+
+header a:hover {
+    color: #ECE8DF;
+}
+.search-btn {
+    background-color: transparent;
+}
+.search-btn:focus {
+    outline: none;
+}
+
+.icon {
+    display: inline-block;
+    padding: 8px; 
+    
+}
+
+/* Appling style to the footer */
+
+.footer{
+    padding-top: 100px;
+}
+
+.my-footer {
+    background-color: #87715C;
+    width: 100%;
+    height: 45px; 
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #fff;
+  }
+
+  .social-media a {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    line-height: 25px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .social-media {
+    margin-right: 25px;
+    text-align: left;
+  }
+  
+  .social-media a:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .my-footer p {
+    margin-left: 25px;
+    margin-top: 10px;
+  }
+
+/* ------------ LOGIN-OUT HMTL ------------ */
+
+.center-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding-top: 20px; 
+}
+
+.container-logs {
+    width: 550px;
+    height: 550px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h2.logo-font {
+    font-size: 30px; 
+    text-align: center; 
+    margin-top: 0; 
+    margin-bottom: 20px; 
+}
+
+.container-logs p {
+    font-size: 13px; 
+    text-align: left; 
+}
+
+.container-logs form.signup{
+    height: 100%; 
+    font-size: 10px;     
+}
+
+.container-logs form.signup button[type="submit"],
+.container-log-in form.login button[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #000; 
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 1px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.container-logs form.signup button[type="submit"]:hover,
+.container-log-in form.login button[type="submit"]:hover {
+    background-color: #000; 
+    color: #fff; 
+}
+
+/* Apply styles to the log in */
+
+.container-log-in{
+    width: 550px;
+    height: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container-log-in form.login {
+    height: 100%; 
+    font-size: 13px;     
+}
+
+.form-bottom-right {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+/* Apply styles to the log out */
+
+.center-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+}
+
+.container-log-out {
+    width: 550px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container-log-out form {
+    height: 100%;
+    font-size: 13px;
+}
+
+.form-bottom-right {
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.container-log-out button.account-button {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #000;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container-log-out button.account-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* Apply styles to the password_reset */
+
+.container-password-reset h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.container-password-reset p {
+    font-size: 13px;
+    text-align: left;
+}
+
+.container-password-reset form.password_reset {
+    font-size: 13px;
+    text-align: left;    
+}
+
+.container-password-reset form.password_reset input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid #000; 
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 1px; 
+    transition: background-color 0.3s, color 0.3s;     
+}
+
+.container-password-reset form.password_reset input[type="submit"]:hover {
+    background-color: #000; 
+    color: #fff; 
+}
+
+/* Apply styles to the password_reset_done */
+
+.container-password-reset {
+    width: 550px;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.container-password-reset h1 {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.container-password-reset p {
+    font-size: 13px;
+    text-align: left;
+}
+
+/* Apply styles emails*/
+
+.box-content {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+  }
+
+
+/* ------------ STYLE INDEX.HTML ------------ */
+
+/* Apply styles to the section one */
+
+.section-one {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 60px;
+}
+
+.image-container {
+    width: 75%;
+    height: 100%; 
+    background-image: url('https://images.unsplash.com/photo-1585960622850-ed33c41d6418?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: top;    
+}
+
+.text-container {
+    width: 24%;
+    background-color: #ECE8DF;
+    color: black;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;     
+}
+
+.text-container-margin{
+    margin-left: 40px; 
+}
+
+.shop-btn {
+    color: #000;
+    align-self: flex-start;
+    margin-top: 10px;
+    padding: 5px  5px;
+    width: 30%;
+    text-align: center;
+    border: 1px solid #000;    
+}
+
+.shop-btn:hover{
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+}
+
+#delivery_message_main_page{
+    font-size: small;
+    margin-top: 5%;    
+}
+
+/* Apply styles to the section two */
+.section-two {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.section-two h3 {
+    text-align: center;
+}
+
+.jewelry-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.jewelry-display {
+    width: 33%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1601821765780-754fa98637c1?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: top;
+}
+
+.jewelry-images {
+    width: 32%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.jewelry-images img {
+    width: 100%;
+    aspect-ratio: 1/1; 
+}
+
+.jewelry-description {
+    width: 33%;
+    background-color: #87715C;
+    color: white;
+    text-align: center;
+}
+
+
+.jewelry-description p {
+    font-size: 20px;
+    padding-top: 15%;
+    padding-bottom: 5%;
+    padding-right: 18px;
+}
+
+/* ------------ STYLE 404.HTML ------------ */
+
+.error-content {
+    text-align: center;
+    margin-top: 20vh; 
+}
+
+/* ------------ STYLE PRODUCTS.HTML ------------ */
+
+div.col.text-center h2 {
+    padding-top: 115px;
+}
+
+.product-container img{
+    width: 80%; 
+    height: 400px;
+}
+
+.no-product{
+    padding-top: 150px;
+}
+
+/* ------------ STYLE PRODUCT_DETAILS.HTML ------------ */
+
+.product-details-container{
+    padding-top: 70px;
+}
+
+.product-details-container img{
+    height: 420px;
+    width: 300px;
+}
+
+.product-descripition-container{
+    padding-top: 30px;
+}
+
+.name{
+    font-size: 30px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+.price{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.rating{    
+    padding-left: 35px;
+    
+}
+
+.btn:hover{    
+    border-color: #000; 
+    color: #000;
+}
+
+.quantity-btn{
+    width: 30%;
+}
+
+/* -------- STYLE BAG.HTML ---------- */
+
+ .extra-height{
+    height: 100px;
+}
+
+/* ------------ STYLE MEDIA ------------ */
+
+
+@media screen and (max-width: 1150px) {
+ 
+    
+    .jewelry-description p {        
+        padding-top: 15%;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 980px){
+
+    .space-navbar-maincontent {
+        padding-top: 200px;
+    }
+
+    .footer {
+        padding-top: 0px;
+    }
+
+    .extra-bottom{
+        margin-bottom: 50px;
+    }
+    
+    /* STYLE INDEX.HTML */
+
+    .shop-btn{
+        width: 40%;
+    }
+
+    .jewelry-container{
+        height: 65%;
+    }
+
+    .jewelry-description p{
+        padding-top: 5%;
+        font-size: small;
+    }
+
+    /* STYLE PRODUCTS.HTML */
+
+    div.col.text-center h2 {
+        padding-top: 215px;
+    }
+
+    .product-container img{
+        width: 80%; 
+        height: 350px;        
+    }
+
+    .no-product{
+        padding-top: 250px;
+    }
+
+    /* STYLE PRODUCT_DETAILS.HTML */
+
+    .product-details-container{
+        padding-top: 200px;
+    }
+    .product-details-container img{        
+        width: 80%;
+        padding-left: 15px;
+    }
+
+     /* STYLE BAG.HTML */
+
+    .extra-height{
+        height: 200px;
+    }
+}
+
+
+@media  (max-width: 768px){
+
+        /* STYLE BASE.HTML */
+
+
+        .footer{
+            padding-top: 20px;
+        }
+
+        .my-footer {
+            height: 60px; 
+          }
+
+          .social-media {
+            margin: 0 auto; 
+            text-align: center;
+          }
+        
+          .social-media a {
+            margin-top: 10px; 
+          }
+
+          .text-right{
+            text-align: center !important; 
+          }
+        
+          .my-footer p {
+            margin: 0; 
+            margin-top: 5px; 
+          }
+
+    /* STYLE INDEX.HTML */
+
+    .section-one {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 300px; 
+        background-position: top;
+    }
+
+    .text-container {
+        width: 100%;
+        height: auto;
+        padding: 20px; 
+    }
+
+    .shop-btn {
+        width: 20%;
+    }
+
+    .jewelry-container {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 45px;
+    }
+
+    .jewelry-display {
+        width: 100%;
+        height: 450px;
+        background-position: center;
+    }
+
+    .jewelry-details {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .jewelry-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .jewelry-images img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0; 
+    }
+
+    .jewelry-description {
+        width: 100%;
+    }
+
+    /* STYLE PRODUCTS.HTML */  
+
+    .product-container img{
+        width: 80%; 
+        height: 450px;
+    }
+
+     /* STYLE PRODUCT_DETAILS.HTML */
+
+     .product-details-container img {
+        width: 80%;
+        height: 500px;
+        padding-left: 15%;
+    }
+}
+
+
+
+/* ------------ TOASTS ------------ */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid #87715C;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+.arrow-primary {
+    border-bottom-color: #ECE8DF !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #000 !important;
+}
+
+.arrow-success {
+    border-bottom-color: #ECE8DF !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #000 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #87715C !important;
+}
+
+.arrow-info {
+    border-bottom-color: #ECE8DF !important;
+}
+
+.arrow-light {
+    border-bottom-color: #ECE8DF !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #000 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
