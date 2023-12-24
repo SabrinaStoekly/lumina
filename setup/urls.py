@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 from django.conf.urls import handler404
 
 from home.views import custom_404_page
+from django.views.generic.base import RedirectView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +31,7 @@ urlpatterns = [
     path('bag/', include('bag.urls')),
     path('checkout/', include('checkout.urls')),
     path('profile/', include('profiles.urls')),
+    path('favicon.ico', RedirectView.as_view(url=settings.MEDIA_URL + 'favicon_io/favicon.ico')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'home.views.custom_404_page'

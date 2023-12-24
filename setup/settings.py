@@ -25,10 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#lwl4y-^#ch93ebo=8r5du@s)s70r(8txhwcle@rh**#2$=b03'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['luminashop.herokuapp.com', 'localhost']
+# ALLOWED_HOSTS = ['luminashop.herokuapp.com', 'localhost']
 
+ALLOWED_HOSTS = ['8000-sabrinastoekly-lumina-ph4e6plt1xp.ws-eu107.gitpod.io']
 
 # Application definition
 
