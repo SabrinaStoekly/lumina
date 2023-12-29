@@ -159,11 +159,11 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'luminashop',  # Your ElephantSQL database name
-        'USER': 'pvcdatqa',    # Database user (same as the default database)
-        'PASSWORD': 'your_password_here',  # Your ElephantSQL database password
-        'HOST': 'mel.db.elephantsql.com',  # Database host address
-        'PORT': '5432',        # Database port number (usually 5432 for PostgreSQL)
+        'NAME': 'luminashop', 
+        'USER': 'pvcdatqa',   
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'), 
+        'HOST': 'mel.db.elephantsql.com',  
+        'PORT': '5432',        
     }
 }
 
