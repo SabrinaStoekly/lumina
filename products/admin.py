@@ -8,6 +8,6 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'category', 'sku')
-    list_filter = ('category',)  # Adiciona filtro por categoria
-    search_fields = ('name', 'description')  # Adiciona campo de pesquisa por nome e descrição
+    list_filter = ('category',)  
+    search_fields = ('name', 'description')  
 

@@ -27,11 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#lwl4y-^#ch93ebo=8r5du@s)s70r(8txhwcle@rh**#2$=b03'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+#DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['luminashop.herokuapp.com', 'luminashop-43e0933e7995.herokuapp.com', 'localhost']
+DEBUG = True
 
-# ALLOWED_HOSTS = ['8000-sabrinastoekly-lumina-ph4e6plt1xp.ws-eu107.gitpod.io']
+# ALLOWED_HOSTS = ['luminashop.herokuapp.com', 'luminashop-43e0933e7995.herokuapp.com', 'localhost']
+
+ALLOWED_HOSTS = ['8000-sabrinastoekly-lumina-ph4e6plt1xp.ws-eu107.gitpod.io']
 
 # Application definition
 
@@ -156,8 +158,12 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'luminashop',  # Your ElephantSQL database name
+        'USER': 'pvcdatqa',    # Database user (same as the default database)
+        'PASSWORD': 'your_password_here',  # Your ElephantSQL database password
+        'HOST': 'mel.db.elephantsql.com',  # Database host address
+        'PORT': '5432',        # Database port number (usually 5432 for PostgreSQL)
     }
 }
 
