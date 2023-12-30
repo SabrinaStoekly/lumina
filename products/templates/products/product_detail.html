@@ -40,8 +40,8 @@
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="my-5">
                     {% if product.fields.image %}
-                            <a href="{% url 'product_detail' product.pk %}" target="_blank">
-                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.fields.image }}" alt="{{ product.fields.name }}">
+                            <a href="{% url 'products:product_detail' product.id %}" class="d-block text-center">
+                                <img class="card-img-top img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}" >
                             </a>
                     {% else %}
                             <a href="">
