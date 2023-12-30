@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from env import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -111,8 +112,8 @@ AUTHENTICATION_BACKENDS = (
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': 'seu-client-id-do-google',
-            'secret': 'seu-client-secret-do-google',
+            'client_id': '238048111165-lpovogaen8dc7t9u4n1bdtli1gi09t10.apps.googleusercontent.com',
+            'secret': os.environ.get('GOOGLE_CLIENT_SECRET'),
             'key': ''
         },
         'AUTH_PARAMS': {
