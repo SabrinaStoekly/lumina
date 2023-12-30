@@ -109,23 +109,6 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'APP': {
-            'client_id': '238048111165-lpovogaen8dc7t9u4n1bdtli1gi09t10.apps.googleusercontent.com',
-            'secret': os.environ.get('GOOGLE_CLIENT_SECRET'),
-            'key': ''
-        },
-        'AUTH_PARAMS': {
-            'access_type': 'online',
-        },
-        'SCOPE': [
-            'profile',
-            'email',
-        ],
-    }
-}
-
 SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
