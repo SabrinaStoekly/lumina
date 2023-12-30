@@ -39,14 +39,14 @@
         <div class="row product-details-container">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="my-5">
-                    {% if product.image_url %}
-                        <a href="{{ product.image_url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ product.image_url }}" alt="{{ product.name }}">
-                        </a>
+                    {% if product.fields.image %}
+                            <a href="{% url 'product_detail' product.pk %}" target="_blank">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.fields.image }}" alt="{{ product.fields.name }}">
+                            </a>
                     {% else %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                        </a>
+                            <a href="">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.fields.name }}">
+                            </a>
                     {% endif %}
                 </div>
             </div>
