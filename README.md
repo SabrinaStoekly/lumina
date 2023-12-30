@@ -2,6 +2,7 @@
 
 This project represents a significant milestone in my journey as a Full Stack Software Developer, showcasing my skills in developing a full-fledged e-commerce website dedicated to selling exquisite jewelry. As part of my ongoing learning and development, LUMINA offers an immersive experience in discovering and purchasing stunning jewelry pieces.
 
+Experience the allure of LUMINA by visiting the website [here](https://luminashop-43e0933e7995.herokuapp.com/) !!
 ---
 
 ## Table of Contents
@@ -18,6 +19,7 @@ This project represents a significant milestone in my journey as a Full Stack So
 - [Wireframes](#wireframes)
 - [Agile Methodology](#agile-methodology)
 - [Main Features](#main-features)
+- [Future Features](#future-features)
 - [CRUD](#crud)
 - [Technologies](#technologies)
 - [Tools](#tools)
@@ -89,7 +91,6 @@ The project milestones were established to align with the objectives of Lumina, 
 - **Product Management System**: Implemented functionalities for adding, updating, and removing items from the shopping cart for a streamlined shopping experience.
 - **Secure Checkout Integration**: Integrated a robust payment gateway, Stripe, ensuring secure and reliable transactions for customers.
 - **User Registration and Profiles**: Enabled users to create accounts, manage profiles, and track order history, fostering a personalized shopping journey.
-- **Social Media Login Integration**: Incorporated social media login options (e.g., Google login) for a convenient and secure authentication process, improving user accessibility and experience.
 - **Responsive Design Implementation**: Ensured the website's compatibility across various devices, providing an optimal shopping experience on desktops, tablets, and mobile phones.
 - **Admin Dashboard Development**: Empowered administrators with tools to manage products, orders, and user data efficiently.
 - **User Engagement Features**: Enabled interactive elements such as product reviews, ratings, and social sharing options to encourage user interaction and community engagement.
@@ -323,10 +324,36 @@ Empowering users to tailor their shopping experience, the 'remove' option enable
 
 These CRUD functionalities provide users with an intuitive and efficient shopping experience on the LUMINA Jewelry Shop. Users can effortlessly manage their shopping bags, ensuring a personalized and seamless purchasing process.
 
+## Future Features
+
+### Planned Feature: Social Media Login Integration
+
+At present, the integration of social media login options, such as Google login, has not been implemented due to certain technical challenges or limitations. However, it is on the roadmap for future development.
+
+Enabling social media login functionality is a planned enhancement aimed at providing users with a more convenient and secure authentication process, ultimately enhancing accessibility and improving the overall user experience.
+
+Stay tuned for future updates as we work diligently to incorporate social media login options into the platform, ensuring a seamless and user-friendly authentication mechanism.
+
 
 ## CRUD Functionality for Product Management
 
-TO BE DONE
+### Add Product
+
+As an admin, you can conveniently add new products to the inventory. Access the admin dashboard and navigate to the product management section to add a new product.
+
+<img src="readme/add_product_admin.png" width="100%">
+
+### Edit Product
+
+Edit existing product details effortlessly from the admin panel. Locate the product you wish to modify and access the edit functionality.
+
+<img src="readme/edit_product_admin.png" width="100%">
+
+### Delete Product
+
+<img src="readme/delete_product_admin.png" width="100%">
+
+Administrators have the authority to remove products from the inventory. Easily locate the product and proceed with the deletion action.
 
 ## Technologies
 LUMINA Jewelry Shop incorporates a variety of technologies to support its functionality and design:
@@ -420,11 +447,81 @@ Upon adding items to the bag, the functionality of the Keep Shopping button was 
 
 - Adjusted the structure within product_details.html by creating a separate href link for the Keep Shopping button to ensure independent functionality from the Add to Bag button. This change resolved the conflict and allowed the Keep Shopping button to redirect users correctly.
 
-## Project Validation
+### Unresolved Bugs
+#### Bug 3: Issue with Stripe Webhook Functionality
+#### Issue:
+Webhooks from Stripe are not functioning correctly, resulting in a disruption of payment processing and data synchronization.
+
+#### Bug Details:
+The webhook functionality integrated with Stripe is failing to trigger expected events, causing a breakdown in payment processing and the synchronization of critical data related to transactions and user actions.
+
+#### Next Steps (Pending Resolution):
+- Review and compare the webhook configuration settings in the Stripe dashboard with the implemented code to identify discrepancies.
+- Test the functionality using Stripe's test webhooks to verify the system's response to various events and debug any issues encountered.
+- Inspect the event handlers in the codebase to ensure they are correctly set up to handle Stripe webhook events.
+- Implement enhanced logging and error handling mechanisms to capture and investigate any errors or issues occurring during webhook processing.
 
 ## Lighthouse Report
 
-## Deployment
+The current Lighthouse audit results for this project showcase the following scores:
+
+<img src="readme/lighthouse.png" width="100%">
+
+### Performance Enhancement Strategy:
+
+#### Ongoing Improvements:
+
+The performance score of 68 indicates room for enhancement in terms of website speed and optimization. To further elevate the site's performance, the following actions are planned:
+
+1. **Image Optimization**: Optimize images by compressing and resizing them without compromising quality. Use modern image formats where possible (such as WebP) to reduce file sizes.
+   
+2. **Minimizing Render-Blocking Resources**: Implement techniques like asynchronous loading, deferred loading, or code-splitting to minimize the impact of render-blocking CSS and JavaScript files.
+
+3. **Browser Caching**: Set appropriate caching headers for static resources to leverage browser caching effectively, reducing server load and improving load times for returning visitors.
+
+4. **Code Minification and Compression**: Minify CSS, JavaScript, and HTML files to reduce their sizes. Implement compression (Gzip or Brotli) to deliver smaller file sizes to users' browsers.
+
+5. **Eliminating Unused Code**: Remove unused CSS/JS to reduce payload size. Consider using tools like PurifyCSS or tree-shaking for JavaScript to eliminate unnecessary code.
+
+6. **Critical Rendering Path Optimization**: Prioritize critical CSS and defer non-critical JavaScript to improve initial load time.
+
+7. **Lazy Loading**: Implement lazy loading for below-the-fold content to defer loading until it comes into view.
+
+8. **Optimizing Third-Party Scripts**: Limit or optimize third-party scripts to minimize their impact on page load times.
+
+9. **Server-Side Optimization**: Optimize server response time by caching queries and using efficient coding practices.
+
+10. **Content Delivery Network (CDN)**: Consider using a CDN to distribute content globally, reducing latency for users in different locations.
+
+By implementing these improvements, the goal is to enhance the website's performance, aiming for a higher score and an optimized user experience.
+
+
+## Deploying on Heroku
+
+Follow these steps to deploy your project on Heroku:
+
+1. **Sign Up or Log In**: If you don't have an account, [create one on Heroku](https://www.heroku.com/) and log in.
+
+2. **Create a New App**: In your Heroku dashboard, click "New" and choose "Create new app."
+
+3. **Name Your App**: Pick a suitable name and choose your region.
+
+4. **Set Environment Variables**:
+   - Open the "Settings" tab.
+   - Click "Reveal Config Vars."
+   - Add key-value pairs from your .env file (excluding DEBUG and DEVELOPMENT variables).
+
+5. **Add Python Buildpack**:
+   - In "Settings," under "Add buildpack," select "python" from the list and save.
+
+6. **Connect to GitHub**:
+   - Visit the "Deploy" tab.
+   - Choose "GitHub - Connect to GitHub" under deployment methods.
+   - Find and select your GitHub repository.
+   - Enable automatic deploys to update your site when you push code to GitHub.
+
+7. **Preview Your Site**: Click "View" to see your deployed site on Heroku.
+
 
 ## Forking the Repository
 
