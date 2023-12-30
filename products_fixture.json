@@ -1,0 +1,244 @@
+[
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "sku": "101",
+    "name": "Diamond Bobbolt Gold Necklace",
+    "description": "Radiant in its allure, our Diamond Bobbolt Gold Necklace shimmers with sophistication. Crafted in exquisite gold, this necklace is adorned with a resplendent display of diamonds embracing the bobble design, exuding timeless elegance and grace.",
+    "price": "249.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "101_wx3wVHD.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "sku": "102",
+    "name": "Sterling Silver Square Diamond Necklace",
+    "description": "Elegance meets sophistication in our Sterling Silver Square Diamond Necklace. This exquisite piece boasts a sleek design with a square-cut diamond pendant, exuding charm and refinement.",
+    "price": "129.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "102_yXemf08.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "sku": "103",
+    "name": "Heart-shaped Silver Necklace",
+    "description": "Capture hearts with our Silver Heart-shaped Necklace, a symbol of love and tenderness. This delicately crafted piece in silver adds a touch of grace and sentimentality to any ensemble, a perfect expression of heartfelt emotions.",
+    "price": "99.99",
+    "rating": "4.50",
+    "image_url": null,
+    "image": "103_DX2LuuM.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "sku": "104",
+    "name": "Golden Drop Diamond Necklace",
+    "description": "Elegance personified, our Golden Drop Diamond Necklace features a captivatingly beautiful golden chain hosting a stunning diamond drop. A timeless statement of sophistication and glamour, designed to enchant.",
+    "price": "359.99",
+    "rating": "4.90",
+    "image_url": null,
+    "image": "104_1Q3ZMD2.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "category": 2,
+    "sku": "201",
+    "name": "Stunning Blue Diamond Gold Earrings",
+    "description": "Indulge in luxury with our Stunning Blue Diamond Gold Earrings. These resplendent gold earrings adorned with mesmerizing blue diamonds exude opulence and refinement, a testament to unparalleled beauty.",
+    "price": "179.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "201_GOFlSUc.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "sku": "202",
+    "name": "Intricate Woven Gold Earrings",
+    "description": "Exquisite craftsmanship meets sophistication in our Intricate Woven Gold Earrings. Delicately woven in gold, these petite yet captivating earrings add an understated elegance to any look.",
+    "price": "79.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "202_eFcQEQg.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "category": 2,
+    "sku": "203",
+    "name": "Chic Gold Earrings with Macramé Stones",
+    "description": "Unveil sophistication with our Chic Gold Earrings featuring exquisite macramé stones. A luxurious blend of design and opulence, these earrings are a statement of refined taste and glamour.",
+    "price": "219.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "203_zDVrdPu.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "sku": "301",
+    "name": "Diamond-Encrusted Silver Ring",
+    "description": "Adorn your fingers with our enchanting Diamond-Encrusted Silver Ring. A breathtaking arrangement of diamonds encircles the entirety of this sterling silver ring, epitomizing timeless elegance and grace.",
+    "price": "149.99",
+    "rating": "4.70",
+    "image_url": null,
+    "image": "301_k2IWSIn.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "sku": "302",
+    "name": "Gold Floral Diamond Ring",
+    "description": "Captivate with our Gold Floral Diamond Ring, a delicate bloom crafted from radiant diamonds atop a golden band. This ring embodies the essence of elegance and natural beauty.",
+    "price": "179.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "302_bQjaDao.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "category": 3,
+    "sku": "303",
+    "name": "Silver Diamond Pavé Ring",
+    "description": "Exude sophistication with our Silver Diamond Pavé Ring featuring an array of small shimmering diamonds, culminating in a grand central diamond. A statement piece designed for timeless allure.",
+    "price": "219.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "303_E5YoIhu.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "category": 3,
+    "sku": "304",
+    "name": "Delicate Golden Heart Ring",
+    "description": "Embrace romance with our Delicate Golden Heart Ring. Gracefully crafted in golden hues, this ring symbolizes love and tenderness, a perfect gift for the hopeless romantics.",
+    "price": "99.99",
+    "rating": "4.60",
+    "image_url": null,
+    "image": "304_iZ6L13z.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "category": 4,
+    "sku": "401",
+    "name": "Dainty Gold Bracelet",
+    "description": "Understated yet breathtaking, our Dainty Gold Bracelet epitomizes simplicity and beauty. Crafted in gold, this bracelet exudes delicate charm, a perfect addition to any ensemble.",
+    "price": "69.99",
+    "rating": "4.50",
+    "image_url": null,
+    "image": "401_lAbSPUh.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "category": 4,
+    "sku": "402",
+    "name": "Alluring Gold Bracelet for the Confident Woman",
+    "description": "\"Unleash your confidence with our Alluring Gold Bracelet designed for the modern, confident woman. This captivating bracelet in gold adds allure and sophistication to your style.\"",
+    "price": "89.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "402_46TRov8.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "category": 4,
+    "sku": "403",
+    "name": "Stylish Silver Arm Band Bracelet",
+    "description": "Make a statement with our Stylish Silver Arm Band Bracelet. Mimicking a black band around the arm, this silver bracelet exudes elegance and style, a perfect blend of boldness and grace.",
+    "price": "89.99",
+    "rating": "4.80",
+    "image_url": null,
+    "image": "403_qwnsavC.png"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 22,
+  "fields": {
+    "category": 3,
+    "sku": "204",
+    "name": "Gilded Pearl Web Elegance Earring",
+    "description": "Adorn yourself with our Gilded Pearl Web Elegance Earring, a mesmerizing creation resembling a delicate web spun from radiant gold. Nestled within each intricately crafted crevice lies a lustrous pearl, evoking an air of timeless sophistication and grace. This masterpiece of craftsmanship and elegance is a statement piece that captures the essence of refined beauty.",
+    "price": "279.99",
+    "rating": null,
+    "image_url": "https://images.unsplash.com/photo-1615197419794-52a6f5da9df0?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "image": "204_APn9Io2.png"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "necklaces",
+    "friendly_name": "Necklaces"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "earrings",
+    "friendly_name": "Earrings"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "rings",
+    "friendly_name": "Rings"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name": "bracelets",
+    "friendly_name": "Bracelets"
+  }
+}
+]
